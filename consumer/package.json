@@ -1,0 +1,35 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "consumer": "node src/consumerService.js",
+    "test:consumer": "jest tests/contract/consumer --runInBand",
+    "publish": "node ./tests/contract/helpers/publish.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@pact-foundation/pact": "^9.14.0",
+    "axios": "^0.19.0",
+    "babel-jest": "^26.6.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "jest": "^25.1.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFiles": [
+      "./tests/contract/helpers/jestSetup.js"
+    ],
+    "setupFilesAfterEnv": [
+      "./tests/contract/helpers/jestHooks.js"
+    ]
+  }
+}

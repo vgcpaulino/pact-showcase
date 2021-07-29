@@ -1,0 +1,90 @@
+{
+  "consumer": {
+    "name": "APP Frontend"
+  },
+  "provider": {
+    "name": "APP Backend"
+  },
+  "interactions": [
+    {
+      "description": "a request for all clients",
+      "providerState": "I have a list of clients",
+      "request": {
+        "method": "GET",
+        "path": "/clients",
+        "headers": {
+          "Accept": "application/json, text/plain, */*"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "X-Custom-Header": "Custom"
+        },
+        "body": {
+          "firstName": "Lisa",
+          "lastName": "Simpson",
+          "age": 8,
+          "id": 1
+        }
+      }
+    },
+    {
+      "description": "a request for ONE clients",
+      "providerState": "I have a list of clients",
+      "request": {
+        "method": "GET",
+        "path": "/clients/3"
+      },
+      "response": {
+        "status": 200,
+        "headers": {},
+        "body": {
+          "firstName": "Homer",
+          "lastName": "Simpson",
+          "age": 39,
+          "id": 3
+        }
+      }
+    },
+    {
+      "description": "a equest to create a new client with First Name and Last Name",
+      "providerState": "I create a new Client",
+      "request": {
+        "method": "POST",
+        "path": "/clients",
+        "headers": {
+          "Content-Type": "application/json;charset=utf-8"
+        },
+        "body": {
+          "firstName": "John",
+          "lastName": "Doe",
+          "age": 31
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "firstName": "John",
+          "lastName": "Doe",
+          "age": 31,
+          "id": 10
+        },
+        "matchingRules": {
+          "$.body.id": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

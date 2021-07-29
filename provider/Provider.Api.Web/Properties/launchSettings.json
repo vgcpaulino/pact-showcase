@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Provider.Api.Web": {
+      "commandName": "Project"
+    }
+  }
+}
