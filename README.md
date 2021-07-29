@@ -1,4 +1,4 @@
-# POC Pact - Contract Tests
+# Contract Tests with Pact
 This repository contains a showcase for Contract Testing with [Pact](https://pact.io/). Although in the same repository, the "Provider" and "Consumer" are distinct projects.  
 The "Provider" representing the Backend application, and the "Consumer" representing the Frontend application. In a different scenario, the "Provider" could also contain some service that acts as a "Consumer" for another service, for example the integration between two APIs.  
 
